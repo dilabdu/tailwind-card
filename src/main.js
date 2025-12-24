@@ -1,6 +1,6 @@
 import "./style.css";
 import "./theme.js";
-import products from "./data.js";
+
 import { request } from "./request.js";
 import "./localstorage.js";
 import "./index.js";
@@ -17,7 +17,7 @@ const productCardTemplate = document.querySelector("#product-card-template");
 const productsList = document.querySelector(".products-list");
 
 request("https://dummyjson.com/products?limit=194").then((data) => {
-  console.log(data)
+  console.log(data);
   data.products.forEach((product) => {
     const clone = productCardTemplate.content.cloneNode(true);
     clone.querySelector("div").dataset.id = product.id; // har bitta divni tanlab ularga id berish
